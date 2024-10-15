@@ -15,6 +15,11 @@ the footer and the automatic slideshow */
     font-family: Verdana;
 }
 
+@font-face {
+    font-family: "Verdana";
+    src: url("/css/Fonts/verdana.ttf");
+}
+
 .submit-button {
     width: 75px;
     height: 40px;
