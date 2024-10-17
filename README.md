@@ -7,5 +7,3 @@ Some info that users would be sumbitting to the database include:
 - who is currently working on it
 - where the project currently is in development
 - the location of the project’s git repository
-
-- Test
