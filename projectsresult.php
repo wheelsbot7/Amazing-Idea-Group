@@ -28,7 +28,7 @@ if(isset($_POST['submit'])) {
 <?php
 $url ="http://127.0.0.1/ECSProjects/src";
  //$web_string = file_get_contents($url."/data_src/api/products/read.php?APIKEY=$api_key&catID={$catID}&id={$id}");
- $web_string = file_get_contents($url."/api/projectdata.php");
+ $web_string = file_get_contents($url."/data_src/api/projectdata.php");
 
  $projects = json_decode($web_string);
 
