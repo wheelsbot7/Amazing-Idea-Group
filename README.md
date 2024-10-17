@@ -8,4 +8,3 @@ Some info that users would be sumbitting to the database include:
 - where the project currently is in development
 - the location of the project’s git repository
 
-- test
