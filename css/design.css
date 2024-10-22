@@ -30,12 +30,7 @@ the footer and the automatic slideshow */
     border-radius: 2mm;
     position: relative;
     cursor: pointer;
-
 }
-
-
-
-
 
 .slideshow-container {
     max-width: 1000px;
@@ -65,10 +60,10 @@ the footer and the automatic slideshow */
 
 @keyframes fade {
     from {
-        opacity: .4
+        opacity: 0.4;
     }
 
     to {
-        opacity: 1
+        opacity: 1;
     }
 }

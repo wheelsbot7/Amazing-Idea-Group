@@ -4,9 +4,9 @@ error_reporting(E_ALL & ~E_NOTICE);
 session_start();
 $title = "Elizabethtown College Project";
 
-require_once "includes/header.php";
+require_once "/includes/header.php";
 ?>
-<link rel="stylesheet" href="css/design.css">
+<link rel="stylesheet" href="/css/design.css">
 <!--Logo with background picture-->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
         <img src="images/masters_center.jpg"
@@ -115,7 +115,7 @@ require_once "includes/header.php";
 </div>
 
 <?php
-require_once "includes/footer.php"
+require_once "/includes/footer.php"
 
 ?>
 

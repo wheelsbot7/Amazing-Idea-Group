@@ -4,7 +4,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 session_start();
 $title = "About";
 
-require_once "includes/header.php";
+require_once "/includes/header.php";
 ?>
 <div class="w3-container w3-padding-32" id="home.php#about">
             <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
@@ -46,5 +46,5 @@ require_once "includes/header.php";
 
 
 <?php
-require_once "includes/footer.php"
+require_once "/includes/footer.php"
 ?>
