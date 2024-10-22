@@ -27,59 +27,59 @@ require_once "includes/header.php";
             <div class="project-specs">
                 <div class="dropdown-container">
 
-                    <div class="dropdown">
-                        <div class="title">Select a Project Subject</div>
-                        <div class="input-box" onclick="toggleDropdown()">
-                            <span id="selectedOption"> Select Subject </span>
-                        </div>
-                        <div class="list" id="dropdownOptions">
-                            <input type="radio" name="drop1" id="id1" class="radio">
-                            <label for="id1">
-                                <span class="all-subjects"> All Subjects </span>
-                            </label>
-                            <input type="radio" name="drop2" id="id2" class="radio">
-                            <label for="id2">
-                                <span class="biomed-eng">Biomedical Engineering</span>
-                            </label>
-                            <input type="radio" name="drop3" id="id3" class="radio">
-                            <label for="id3">
-                                <span class="civil-eng">Civil Engineering</span>
-                            </label>
-                            <input type="radio" name="drop4" id="id4" class="radio">
-                            <label for="id4">
-                                <span class="comp-eng">Computer Engineering</span>
-                            </label>
-                            <input type="radio" name="drop5" id="id5" class="radio">
-                            <label for="id5">
-                                <span class="comp-sci">Computer Science</span>
-                            </label>
-                            <input type="radio" name="drop6" id="id6" class="radio">
-                            <label for="id6">
-                                <span class="data-science">Data Science</span>
-                            </label>
-                            <input type="radio" name="drop7" id="id7" class="radio">
-                            <label for="id7">
-                                <span class="elec-eng">Electrical Engineering</span>
-                            </label>
-                            <input type="radio" name="drop8" id="id8" class="radio">
-                            <label for="id8">
-                                <span class="env-eng">Environmental Engineering</span>
-                            </label>
-                            <input type="radio" name="drop9" id="id9" class="radio">
-                            <label for="id9">
-                                <span class="indus-eng">Industrial and Systems Engineering</span>
-                            </label>
-                            <input type="radio" name="drop10" id="id10" class="radio">
-                            <label for="id10">
-                                <span class="info-systems">Information Systems</span>
-                            </label>
-                            <input type="radio" name="drop11" id="id11" class="radio">
-                            <label for="id11">
-                                <span class="mech-eng">Mechanical Engineering</span>
-                            </label>
+                <div class="dropdown">
+                    <div class="input-box">
+                        <input type="radio" id="dropdownToggle" name="dropdown" class="radio">
+                        <label for="dropdownToggle">Select Subject</label>
+                    </div>
 
+                    <div class="list" id="dropdownOptions">
+                        <input type="radio" name="drop1" id="id1" class="radio">
+                        <label for="id1">
+                            <span class="all-subjects"> All Subjects </span>
+                        </label>
+                        <input type="radio" name="drop2" id="id2" class="radio">
+                        <label for="id2">
+                            <span class="biomed-eng">Biomedical Engineering</span>
+                        </label>
+                        <input type="radio" name="drop3" id="id3" class="radio">
+                        <label for="id3">
+                            <span class="civil-eng">Civil Engineering</span>
+                        </label>
+                        <input type="radio" name="drop4" id="id4" class="radio">
+                        <label for="id4">
+                            <span class="comp-eng">Computer Engineering</span>
+                        </label>
+                        <input type="radio" name="drop5" id="id5" class="radio">
+                        <label for="id5">
+                            <span class="comp-sci">Computer Science</span>
+                        </label>
+                        <input type="radio" name="drop6" id="id6" class="radio">
+                        <label for="id6">
+                            <span class="data-science">Data Science</span>
+                        </label>
+                        <input type="radio" name="drop7" id="id7" class="radio">
+                        <label for="id7">
+                            <span class="elec-eng">Electrical Engineering</span>
+                        </label>
+                        <input type="radio" name="drop8" id="id8" class="radio">
+                        <label for="id8">
+                            <span class="env-eng">Environmental Engineering</span>
+                        </label>
+                        <input type="radio" name="drop9" id="id9" class="radio">
+                        <label for="id9">
+                            <span class="indus-eng">Industrial and Systems Engineering</span>
+                        </label>
+                        <input type="radio" name="drop10" id="id10" class="radio">
+                        <label for="id10">
+                            <span class="info-systems">Information Systems</span>
+                        </label>
+                        <input type="radio" name="drop11" id="id11" class="radio">
+                        <label for="id11">
+                            <span class="mech-eng">Mechanical Engineering</span>
+                        </label>
+                    </div>
 
-                        </div>
                     </div>
                 </div>
             </div>
