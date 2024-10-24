@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
     // Recipient email address
-    $to = 'alhussainianfal@gmail.com'; // Replace with your email address
+    $to = 'englep@etown.edu'; // Replace with your email address
 
     // Send the email using mail() function
     if (mail($to, 'New message from your website', $message, $headers)) {
