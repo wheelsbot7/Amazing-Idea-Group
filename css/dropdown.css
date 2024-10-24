@@ -77,10 +77,13 @@
 }
 
 /* Open the list when a radio button is checked */
-input[type="radio"] {
-    max-height: 150px; /* Set height when opened */
+input[type="radio"]:checked ~ .list {
+    max-height: 100px; /* Set height when opened */
     overflow-y: auto; /* Enable scrolling when open */
 }
+
+
+
 
    .list input {
        display: none;
@@ -129,3 +132,16 @@ input[type="radio"] {
    .heading {
        position: relative;
    }
+   /* Flexbox container to position dropdown and submit button side by side */
+    .dropdown-submit-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .dropdown-container {
+        flex-grow: 1; /* Makes the dropdown container take up remaining space */
+    }
+
+    .submit-button {
+        margin-left: 10px; /* Adds space between the dropdown and the button */
+    }

@@ -25,6 +25,13 @@ require_once "includes/header.php";
         display:flex;
         background-color: DodgerBlue;
     }
+    .dropdown-container {
+    flex-grow: 1; /* Makes the dropdown container take up remaining space */
+    }
+
+    .submit-button {
+    margin-left: 10px; /* Adds space between the dropdown and the button */
+    }
 </style>
 <body>
     <form action="data_src/api/projectdata.php" method="POST">
