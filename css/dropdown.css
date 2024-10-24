@@ -77,13 +77,10 @@
 }
 
 /* Open the list when a radio button is checked */
-input[type="radio"]:checked ~ .list {
+input[type="radio"] {
     max-height: 150px; /* Set height when opened */
     overflow-y: auto; /* Enable scrolling when open */
 }
-
-
-
 
    .list input {
        display: none;
