@@ -22,7 +22,7 @@ require_once "includes/header.php";
 <!--Dropdown menu with the project subjects-->
 
 <body>
-    <form action="data/src/api/projectdata.php" method="POST">
+    <form action="data_src/api/projectdata.php" method="POST">
         <div class="center">
             <div class="project-specs">
                 <div class="dropdown-container">
