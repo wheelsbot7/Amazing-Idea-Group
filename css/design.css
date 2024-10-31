@@ -67,3 +67,32 @@ the footer and the automatic slideshow */
         opacity: 1;
     }
 }
+
+
+.dropdown-menu {
+    margin: 0;
+    padding: 0;
+    width: 40%;
+    background: #D3D3D3;
+    display: inline-block;
+    border: 1px solid #7c7b7b;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center; /* Center the text */
+}
+
+.dropdown-menu option{
+    margin: 0;
+    padding: 0;
+    background: #FFFFFF;
+    display: inline-block;
+    border: 1px solid #7c7b7b;
+    border-radius: 5px;
+    font-size: 16px;
+
+}
+
+/* Hide the placeholder option once the dropdown is expanded */
+.dropdown-menu .placeholder {
+    display: none;
+}
