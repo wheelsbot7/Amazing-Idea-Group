@@ -12,6 +12,7 @@ require_once "includes/header.php";
     rel="stylesheet" />
 <link rel="stylesheet" href="css/dropdown.css">
 <link rel="stylesheet" href="css/design.css">
+<link rel="stylesheet" href="css/w3.css">
 <div class="w3-padding-16">
     <div class="w3-row w3-center w3-dark-grey w3-padding-48 w3-section">
         <span class="w3-xlarge">Projects</span>
@@ -21,18 +22,22 @@ require_once "includes/header.php";
 
 <!--Dropdown menu with the project subjects-->
 <style>
-    .dropdown-submit-container{
-        display:flex;
+    .dropdown-submit-container {
+        display: flex;
         background-color: DodgerBlue;
     }
+
     .dropdown-container {
-    flex-grow: 1; /* Makes the dropdown container take up remaining space */
+        flex-grow: 1;
+        /* Makes the dropdown container take up remaining space */
     }
 
     .submit-button {
-    margin-left: 10px; /* Adds space between the dropdown and the button */
+        margin-left: 10px;
+        /* Adds space between the dropdown and the button */
     }
 </style>
+
 <body>
     <form action="data_src/api/projectdata.php" method="POST">
         <div class="center">

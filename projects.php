@@ -12,6 +12,7 @@ require_once "includes/header.php";
     rel="stylesheet" />
 <link rel="stylesheet" href="css/dropdown.css">
 <link rel="stylesheet" href="css/design.css">
+<link rel="stylesheet" href="css/w3.css">
 <div class="w3-padding-16">
     <div class="w3-row w3-center w3-dark-grey w3-padding-48 w3-section">
         <span class="w3-xlarge">Projects</span>
@@ -20,9 +21,9 @@ require_once "includes/header.php";
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
-    <?php
-    require_once "includes/footer.php"
-    ?>
+<?php
+require_once "includes/footer.php"
+?>
 
 </body>
 
