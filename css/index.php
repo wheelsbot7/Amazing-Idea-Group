@@ -8,6 +8,7 @@ require_once "includes/header.php";
 ?>
 <link rel="stylesheet" href="css/design.css">
 <link rel="stylesheet" href="css/w3.css">
+<meta charset="utf-8">
 <!--Logo with background picture-->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
   <img src="images/masters_center.jpg"

@@ -10,6 +10,7 @@ require_once "includes/header.php";
 ?>
 <link rel="stylesheet" href="css/design.css">
 <link rel="stylesheet" href="css/w3.css">
+<meta charset="utf-8">
 <div class="w3-padding-16" id="submit">
     <div class="w3-row w3-center w3-dark-grey w3-padding-48 w3-section">
         <span class="w3-row w3-center w3-dark-grey w3-padding-16 w3-xlarge">Every Project Starts with an Idea</span>
