@@ -24,13 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo "<p>Project Name: " . $row['projectName'] . "</p>";
-            echo "<p>Subject: " . $row['projectSubject'] . "</p>";
             echo "<p>Level: " . $row['projectLevel'] . "</p>";
             echo "<p>Description: " . $row['projectDesc'] . "</p>";
-            echo "<p>Contact Person: " . $row['contactPerson'] . "</p>";
-            echo "<p>Website: " . $row['website'] . "</p>";
             echo "<p>Start Date: " . $row['startDate'] . "</p>";
-            echo "<p>Last Updated: " . $row['lastUpdated'] . "</p>";
             echo "<hr>";
         }
     } else {
