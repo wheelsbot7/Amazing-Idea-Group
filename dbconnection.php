@@ -1,10 +1,15 @@
 <?php  
-    $server = 'localhost';
-    $username = 'u413142534_inspire';
+    $server = '127.0.0.1';
+    $username = 'root';
     $password = '';
-    $database = 'u413142534_projects';
+    $database = 'projects';
     $con = mysqli_connect($server, $username, $password, $database);
-    if(mysqli_connecrt_errno()) {
-        echo "Connection Error" . mysql_connect_error();
+
+    // Create connection
+    $conn = new mysqli($server, $username, $password, $database);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
 ?>
