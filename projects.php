@@ -31,7 +31,7 @@ require_once "includes/header.php";
     ?>
     <center>
         
-        <form action="dbPlaceholder.php" method="POST">
+        <form action="projectResults.php" method="POST">
             <!-- <label for="Majors">Choose a Category: </label> -->
             <br>
             <select name="Majors" id="Majors" class="dropdown-menu">
