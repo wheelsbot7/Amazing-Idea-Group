@@ -15,3 +15,7 @@ The database is connected to the frontend and displaying the new project idea.
 
 1. Student visits the site and clicks "Submit a Project Idea"
 2. Student fills out a form and clicks "Submit"
+3. The contents of the form are formatted into an email, which is sent to a reviewer
+4. The reviewer signals approval
+5. The contents of the form are added to the project database
+6. The project idea appears in the web frontend
