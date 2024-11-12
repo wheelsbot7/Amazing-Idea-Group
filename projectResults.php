@@ -3,53 +3,52 @@ include 'dbconnection.php';
 //require_once "includes/header.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve the selected value from the dropdown
-    $selectedMajor = $_POST['Majors'];
+    // Check if a major was selected and allow full page to run
+    if (isset($_POST['Majors']) && !empty($_POST['Majors'])) {
+        // Retrieve and display the selected major
+        $selectedMajor = $_POST['Majors'];
+        echo "<h1>You have selected: $selectedMajor</h1>";
+        $validSelection = true;
 
-    // Display the selected major
-    echo "<h1>You have selected: $selectedMajor</h1>";  
-} else {
-    // If the form wasn't submitted properly, show an error message
-    echo "<h1>Error: No selection was made.</h1>";
-}
+        // Empty array to store project data
+        $projects = [];
 
-// Empty array to store project data
-$projects = [];
+        //  SQL QUERY GOES HERE
+        $sql = "SELECT projectID, projectName, projectLevel, projectDesc, fieldSubject as 'projectField(s)' FROM projects p
+        LEFT JOIN proj_field pf ON p.projectID = pf.ProjID
+        LEFT JOIN fields f ON pf.fields_ID = f.fieldID
+        WHERE fieldID = $selectedMajor
+        ";
+        $result = $conn->query($sql);
 
-                                                        //SQL QUERY GOES HERE
-$sql = "SELECT projectID, projectName, projectLevel, projectDesc, fieldSubject as 'projectField(s)' FROM projects p
-LEFT JOIN proj_field pf ON p.projectID = pf.ProjID
-LEFT JOIN fields f ON pf.fields_ID = f.fieldID
-";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // Loop through the result and store each row in the $projects array
-    while($row = $result->fetch_assoc()) {
+        if ($result->num_rows > 0) {
+        // Loop through the result and store each row in the $projects array
+        while($row = $result->fetch_assoc()) {
         $projects[] = $row; // Add the entire row to the array
+        }
+        } else {
+        echo "0 results";
+        }
+
+    } else {
+        // Show an error message if no selection was made and exit code on page
+        echo "<h1 style='color: red; text-align: center;'>Error: Please select a major.</h1>";
+        $validSelection = false;
+        
     }
-} else {
-    echo "0 results";
 }
+
+
 
 // Close the connection
 $conn->close();
 
-// Display projects array
-/*
-echo "<pre>";
-print_r($projects);
-echo "</pre>";
-echo $projects[index]['field_name']
-*/
-
 ?>
 
 <br><br>
-
-<!--  Begin implementing data to Website -->
-
 <button onclick="window.location.href='projects.php';">Back</button>
+<!--  Begin implementing data to Website -->
+<?php if ($validSelection): ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -137,4 +136,4 @@ foreach ($projects as $project) {
 
 </body>
 </html>
-
+<?php endif; ?>
