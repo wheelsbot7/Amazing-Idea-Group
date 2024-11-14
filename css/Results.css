@@ -1,0 +1,34 @@
+/* Basic styling for the project cards */
+.project-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures rounded corners apply to all sections */
+    background-color: #f0f0f0; /* Optional: background color for the whole card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Adds space between cards */
+}
+
+/* Title section with distinct background */
+.project-title {
+    background-color: #7f2121; /* Background color of the title section */
+    padding: 16px;
+    color: white; /* Text color for contrast */
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0; /* Remove default margin */
+}
+
+/* Content section */
+.project-content {
+    padding: 8px;
+    padding-left: 40px;  /* Adds left padding to the content section */
+    background-color: #A7A7A7; /* Background color for content */
+}
+
+.project-field,
+.project-level,
+.project-desc {
+    margin-top: 16px;
+    color: #3c3c3c;
+
+}

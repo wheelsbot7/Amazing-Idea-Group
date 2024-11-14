@@ -47,6 +47,7 @@ $conn->close();
 
 <br><br>
 <button onclick="window.location.href='projects.php';">Back</button>
+
 <!--  Begin implementing data to Website -->
 <?php if ($validSelection): ?>
 
@@ -55,39 +56,9 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Results.css">
     <title>Project List</title>
-    <style>
-        /* Basic styling for the project cards */
-        .project-card {
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 16px;
-            background-color:#1E90FF;
-            margin: 10px 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .project-title {
-            font-size: 1.5em;
-            color: #333;
-            margin-bottom: 8px;
-        }
-        .project-field {
-            text-indent: 40px;
-            font-weight: bold;
-            color: #555;
-        }
-        .project-level {
-            text-indent: 40px;
-            margin-top: 12px;
-            color: #666;
-        }
-        .project-desc {
-            text-indent: 40px;
-            margin-top: 12px;
-            color: #666;
-        }
-        
-    </style>
+
 </head>
 <body>
 
@@ -111,26 +82,23 @@ if ($result->num_rows > 0) {
 } else {
     echo "<p>No projects found in the database.</p>";
 }
-/*
-$projects = [
-    ['projectID' => 1,
-        'projectName' => $projects[0]['projectName'],
-        'projectLevel' => $projects[0]['projectLevel'],
-        'projectDesc' => $projects[0]['projectDesc'],
-        'projectField(s)'=> $project['projectField(s)']
-    ],
-];
-*/
+
 
 // Loop through projects and output each in HTML structure
 foreach ($projects as $project) {
+    //  Start Cards
     echo '<div class="project-card">';
-    echo '<div class="project-title">' . htmlspecialchars($project['projectName']) . '</div>';
-    echo '<div class="project-field">' . htmlspecialchars($project['projectField(s)']) . '</div>';
-    echo '<div class="project-level">Level: ' . htmlspecialchars($project['projectLevel']) . '</div>';
-    echo '<div class="project-desc">' . htmlspecialchars($project['projectDesc']) . '</div>';
     
-    echo '</div>';
+        echo '<div class="project-title">' . htmlspecialchars($project['projectName']) . '</div>';
+
+        // Start the content section
+        echo '<div class="project-content">';
+            echo '<div class="project-field">' . htmlspecialchars($project['projectField(s)']) . '</div>';
+            echo '<div class="project-level">Level: ' . htmlspecialchars($project['projectLevel']) . '</div>';
+            echo '<div class="project-desc">' . htmlspecialchars($project['projectDesc']) . '</div>';
+        echo '</div>';  // Close project content section
+    
+    echo '</div>'; // Close card section
 }
 ?>
 

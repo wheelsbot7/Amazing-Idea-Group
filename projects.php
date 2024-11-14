@@ -60,7 +60,7 @@ $conn->close();
                     <!-- Placeholder option -->
                 <option value="" disabled selected class = "placeholder">Choose a Category</option>
 
-                <!--  using PHP to loop through every fieldSubject in the fields table and report fieldID for filtering on next page-->
+                <!--  loop through every fieldSubject in the fields table and report fieldID for filtering on next page-->
                 <?php foreach ($fields as $field): ?>
                     <option value="<?= $field['fieldID']; ?>"><?= $field['fieldSubject']; ?></option>
                 <?php endforeach; ?>
