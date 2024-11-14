@@ -1,0 +1,11 @@
+.temp_for_header {
+    width: 75px;
+    height: 40px;
+    border: none;
+    background-color: gray;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 2mm;
+    position: relative;
+    cursor: pointer;
+}

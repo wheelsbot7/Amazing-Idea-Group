@@ -13,7 +13,7 @@
 <body>
     <div class="w3-top">
         <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-            <a href="index.php#home" target="_blank">
+            <a href="index.php#home">
                 <img src="images/Logos/blueJay2BU.png" width="100" height="100">
             </a>
 
