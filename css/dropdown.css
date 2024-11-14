@@ -108,7 +108,7 @@ input[type="radio"]{
    }
 
    input:checked+label {
-       color: rgb(20, 117, 213);
+       color: #D3D3D3;
        background: rgb(238, 245, 252);
    }
 
