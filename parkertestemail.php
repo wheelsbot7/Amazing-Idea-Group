@@ -3,7 +3,7 @@
 
 $name = "Sample name";
 $message = "Sample message";
-$email = "Sample message";
+$email = "Sample email";
 
 $subject = "sample subject";
 $comment = "sample comment";
@@ -21,7 +21,7 @@ if(mail($to, 'New message from your website', $message, $headers)){
     echo error_get_last()['message'];
 }
 
-$sql = 'INSERT INTO pending(name,email,subject) VALUES ($name,$email, $subject)';
+$sql = 'INSERT INTO pending(name,email,subject, startDate) VALUES ($name,$email, $subject,CURRENT_DATE)';
 if(mysqli_query($conn,$sql)){
     echo "Record inserted successfully";
 }else{
