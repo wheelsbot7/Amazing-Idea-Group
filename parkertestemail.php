@@ -1,8 +1,17 @@
 <?php
 
-$to = "pme0420@gmail.com";
+
+$name = "Sample name";
 $message = "Sample message";
+$email = "Sample message";
+
+$subject = "sample subject";
+$comment = "sample comment";
+$date = "9/9/9";
+
 $headers = "Sample header";
+$to = "pme0420@gmail.com";
+
 
 if(mail($to, 'New message from your website', $message, $headers)){
     echo "Thank you! Your message has been sent. Please allow us 3-5 business days to respond.";
@@ -12,5 +21,13 @@ if(mail($to, 'New message from your website', $message, $headers)){
     echo error_get_last()['message'];
 }
 
+$sql = 'INSERT INTO pending(name,email,subject) VALUES ($name,$email, $subject)';
+if(mysqli_query($conn,$sql)){
+    echo "Record inserted successfully";
+}else{
+    echo "Could not insert record: ". mysqli_error($conn);
+
+}
+mysqli_close($conn);
 
 ?>
