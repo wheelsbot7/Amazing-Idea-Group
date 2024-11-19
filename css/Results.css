@@ -27,7 +27,8 @@
 
 .project-field,
 .project-level,
-.project-desc {
+.project-desc,
+.contact-info{
     margin-top: 16px;
     color: #3c3c3c;
 
