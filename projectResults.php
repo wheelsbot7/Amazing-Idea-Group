@@ -1,13 +1,13 @@
 <?php
 include 'dbconnection.php';
-//require_once "includes/header.php";
+require_once "includes/header.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if a major was selected and allow full page to run
     if (isset($_POST['Majors']) && !empty($_POST['Majors'])) {
         // Retrieve and display the selected major
         $selectedMajor = $_POST['Majors'];
-        echo "<h1>You have selected: $selectedMajor</h1>";
+        //echo "<h1>You have selected: $selectedMajor</h1>";
         $validSelection = true;
 
         // Empty array to store project data
