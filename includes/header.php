@@ -14,7 +14,7 @@
     <div class="w3-top">
         <div class="w3-bar w3-white w3-wide w3-padding w3-card">
             <a href="index.php#home">
-                <img src="images/Logos/blueJay2BU.png" width="100" height="100">
+                <img src="images/Logos/ETOWN-EngineeringCompSci-Lockup-2945.png" width="auto" height="40" class="w3-left w3-hide-small logo">
             </a>
 
             <div class="w3-right w3-hide-small">

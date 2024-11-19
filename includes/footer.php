@@ -3,5 +3,5 @@
 <meta charset="utf-8">
 
 <footer id="footer">
-  <p>Elizabethtown College Engineering and Computer Science Departments</p>
+  <p style="margin:0px">Elizabethtown College Engineering and Computer Science Departments</p>
 </footer>

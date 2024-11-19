@@ -7,7 +7,7 @@ the footer and the automatic slideshow */
     text-align: center;
     color: #fff !important;
     background-color: #000 !important;
-    padding: 0.1px;
+    margin: 0;
 }
 
 * {
@@ -29,6 +29,11 @@ the footer and the automatic slideshow */
     border-radius: 2mm;
     position: relative;
     cursor: pointer;
+}
+
+.logo {
+    width: auto;
+    height: 30px;
 }
 
 .slideshow-container {
