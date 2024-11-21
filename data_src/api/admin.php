@@ -1,5 +1,5 @@
 <?php
-require "db_config.php";
+require "../../../Amazing-Idea-Group/dbconnection.php";
 session_start();
 
 $conn = new mysqli($host, $dbUsername, $dbPassword, $database);
