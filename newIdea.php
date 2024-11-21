@@ -1,4 +1,7 @@
-<form method="post" action="insertData.php">
+<head>
+Enter new Idea information Below:
+<br>
+    <form method="post" action="newIdea.php">
     <label for="name">Name:</label>
     <input type="text" id="insertions" name="insertName" required>
     
@@ -14,6 +17,7 @@
     <button type="submit">Add Data</button>
 </form>
 
+</head>
 <?php
 // Database connection
 include "dbconnection.php";

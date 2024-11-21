@@ -29,22 +29,24 @@ if ($result->num_rows > 0) {
 $stmt->close();
 ?>
 
+                            <!-- HTML BEGINS HERE -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/Results.css">
+    <link rel="stylesheet" href="css/Results.css">
     <title>Project List</title>
 </head>
 <body>
 
 <h1>Temporary Project List</h1>
 <div class="button-row">
-        <button id="showFormButton">Show Form</button>
-        <button>Other Button 1</button>
-        <button>Other Button 2</button>
+    <button onclick="window.location.href='newIdea.php'" id="NewIdea">New Idea</button>
+        <button onclick="window.location.href='editIdea.php'" id="editButton">Edit Idea</button>
+        <button id="deleteButton">Delete Idea</button>
+        <button id="pushToMain">Transfer to Public</button>
 </div>
 
 <br>
