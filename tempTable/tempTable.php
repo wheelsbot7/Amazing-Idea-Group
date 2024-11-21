@@ -35,13 +35,19 @@ $stmt->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/Results.css">
+    <link rel="stylesheet" href="../css/Results.css">
     <title>Project List</title>
 </head>
 <body>
 
 <h1>Temporary Project List</h1>
+<div class="button-row">
+        <button id="showFormButton">Show Form</button>
+        <button>Other Button 1</button>
+        <button>Other Button 2</button>
+</div>
 
+<br>
 <?php
 // Loop through projects and output each in HTML structure
 if (!empty($projects)) {
