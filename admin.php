@@ -10,7 +10,7 @@ if ($conn->connect_error) {
 }
 
 if (!isset($_POST['username'], $_POST['password'])) {
-    exit('Please complete the registration form!');
+    exit("Access Denied! You don't have permission to log in");
 }
 
 if ($qry = $conn->prepare("SELECT adminID, password FROM users WHERE username = ?")) {
@@ -28,21 +28,21 @@ if ($qry = $conn->prepare("SELECT adminID, password FROM users WHERE username = 
             $_SESSION["name"] = $_POST["username"];
             $_SESSION["id"] = $id;
             
-            header("Location: ../../../Amazing-Idea-Group/tempTable.php");
+            header("Location: ../Amazing-Idea-Group/tempTable.php");
         }
         else {
-            header("Location: ../../../Amazing-Idea-Group/login.php");
+            header("Location: ../Amazing-Idea-Group/login.php");
         }
     } else {
         echo "Incorrect username, try again.";
-        header("Location: ../../../Amazing-Idea-Group/login.php");
+        header("Location: ../Amazing-Idea-Group/login.php");
     }
     $qry->close();
     
 
 } else {
     echo "Incorrect username or password, try again.";
-    header("Location: ../../../Amazing-Idea-Group/login.php");
+    header("Location: ../Amazing-Idea-Group/login.php");
 }
 
 $conn->close();
