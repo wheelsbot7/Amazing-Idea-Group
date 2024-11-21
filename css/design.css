@@ -10,6 +10,10 @@ the footer and the automatic slideshow */
     margin: 0;
 }
 
+#header {
+    font-family: "Gotham";
+}
+
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -17,6 +21,11 @@ the footer and the automatic slideshow */
 @font-face {
     font-family: "Verdana";
     src: url("/css/Fonts/verdana.ttf");
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url("/css/Fonts/Gotham-Black.otf");
 }
 
 .submit-button {

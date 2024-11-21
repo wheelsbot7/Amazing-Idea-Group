@@ -17,7 +17,7 @@
                 <img src="images/Logos/ETOWN-EngineeringCompSci-Lockup-2945.png" width="auto" height="40" class="w3-left w3-hide-small logo">
             </a>
 
-            <div class="w3-right w3-hide-small">
+            <div class="w3-right w3-hide-small" id="header">
                 <a href="index.php#home" class="w3-bar-item w3-button">Home</a>
                 <a href='projects.php' class="w3-bar-item w3-button">Projects</a>
                 <a href="submit.php" class="w3-bar-item w3-button">Submit a Project Idea</a>
