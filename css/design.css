@@ -10,8 +10,9 @@ the footer and the automatic slideshow */
     margin: 0;
 }
 
-#header {
-    font-family: "Gotham";
+#header a{
+    font-family: "Gotham" !important;
+    letter-spacing: normal !important;
 }
 
 * {
