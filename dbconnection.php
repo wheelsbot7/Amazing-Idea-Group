@@ -3,6 +3,8 @@
     $username = 'u413142534_inspire';
     $password = 'WeN33dMoreIde@s!';
     $database = 'u413142534_projects';
+    
+    //NOte $con is not used in this file.  Should it be deleted?
     $con = mysqli_connect($server, $username, $password, $database);
 
     // Create connection
