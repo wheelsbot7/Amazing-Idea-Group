@@ -4,7 +4,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 session_start();
 
 
-require_once "../includes/header.php";
+require "../includes/header.php";
 ?>
 
 <link rel="stylesheet" href="../css/design.css">
@@ -30,5 +30,5 @@ require_once "../includes/header.php";
 </div>
 
 <?php
-require_once "../includes/footer.php"
+require "../includes/footer.php"
 ?>
