@@ -4,11 +4,11 @@ error_reporting(E_ALL & ~E_NOTICE);
 session_start();
 
 
-require "../includes/header.php";
+require "includes/header.php";
 ?>
 
-<link rel="stylesheet" href="../css/design.css">
-<link rel="stylesheet" href="../css/w3.css">
+<link rel="stylesheet" href="css/design.css">
+<link rel="stylesheet" href="css/w3.css">
 <meta charset="utf-8">
 <div class="w3-padding-16" id="submit">
     <div class="w3-row w3-center w3-dark-grey w3-padding-48 w3-section">
@@ -30,5 +30,5 @@ require "../includes/header.php";
 </div>
 
 <?php
-require "../includes/footer.php"
+require "includes/footer.php"
 ?>

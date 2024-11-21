@@ -18,9 +18,9 @@
             </a>
 
             <div class="w3-right w3-hide-small" id="header">
-                <a href="/AIP/Amazing-Idea-Group/index.php#home" class="w3-bar-item w3-button">Home</a>
-                <a href='/AIP/Amazing-Idea-Group/projects.php' class="w3-bar-item w3-button">Projects</a>
-                <a href="/AIP/Amazing-Idea-Group/submit.php" class="w3-bar-item w3-button">Submit a Project Idea</a>
+                <a href="index.php#home" class="w3-bar-item w3-button">Home</a>
+                <a href='projects.php' class="w3-bar-item w3-button">Projects</a>
+                <a href="submit.php" class="w3-bar-item w3-button">Submit a Project Idea</a>
             </div>
         </div>
     </div>

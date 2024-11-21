@@ -33,3 +33,32 @@
     color: #3c3c3c;
 
 }
+
+/* General Button Styling */
+.button-row button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Button size */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+/* Hover Effect */
+.button-row button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+/* Button Alignment */
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
+}
+
+/* Additional Styling */
+.title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+}
