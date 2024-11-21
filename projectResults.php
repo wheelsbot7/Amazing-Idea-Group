@@ -22,19 +22,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
-        // Loop through the result and store each row in the $projects array
-        while($row = $result->fetch_assoc()) {
-        $projects[] = $row; // Add the entire row to the array
-        }
+            // Loop through the result and store each row in the $projects array
+            while ($row = $result->fetch_assoc()) {
+                $projects[] = $row; // Add the entire row to the array
+            }
         } else {
-        echo "0 results";
+            echo "0 results";
         }
-
     } else {
         // Show an error message if no selection was made and exit code on page
         echo "<h1 style='color: red; text-align: center;'>Error: Please select a major.</h1>";
         $validSelection = false;
-        
     }
 }
 
@@ -45,63 +43,66 @@ $conn->close();
 
 ?>
 
-<br><br>
+<br><br><br>
 <button onclick="window.location.href='projects.php';">Back</button>
 
 <!--  Begin implementing data to Website -->
 <?php if ($validSelection): ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/Results.css">
-    <title>Project List</title>
+    <!DOCTYPE html>
+    <html lang="en">
 
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/Results.css">
+        <title>Project List</title>
 
-<h1>Project List</h1>
+    </head>
 
-<?php
-//  Declare all variables with information about projects
+    <body>
 
-if ($result->num_rows > 0) {
-    // Loop through the result set and populate the $projects array
-    while ($project = $result->fetch_assoc()) {
-        // Add each project to the $projects array, using dynamic indexes
-        $projects[] = [
-            'projectID' => $project['projectID'],
-            'projectName' => $project['projectName'],
-            'projectLevel' => $project['projectLevel'],
-            'projectDesc' => $project['projectDesc'],
-            'projectField(s)'=> $project['projectField(s)']
-        ];
-    }
-} else {
-    echo "<p>No projects found in the database.</p>";
-}
+        <h1>Project List</h1>
+
+        <?php
+        //  Declare all variables with information about projects
+
+        if ($result->num_rows > 0) {
+            // Loop through the result set and populate the $projects array
+            while ($project = $result->fetch_assoc()) {
+                // Add each project to the $projects array, using dynamic indexes
+                $projects[] = [
+                    'projectID' => $project['projectID'],
+                    'projectName' => $project['projectName'],
+                    'projectLevel' => $project['projectLevel'],
+                    'projectDesc' => $project['projectDesc'],
+                    'projectField(s)' => $project['projectField(s)']
+                ];
+            }
+        } else {
+            echo "<p>No projects found in the database.</p>";
+        }
 
 
-// Loop through projects and output each in HTML structure
-foreach ($projects as $project) {
-    //  Start Cards
-    echo '<div class="project-card">';
-    
-        echo '<div class="project-title">' . htmlspecialchars($project['projectName']) . '</div>';
+        // Loop through projects and output each in HTML structure
+        foreach ($projects as $project) {
+            //  Start Cards
+            echo '<div class="project-card">';
 
-        // Start the content section
-        echo '<div class="project-content">';
+            echo '<div class="project-title">' . htmlspecialchars($project['projectName']) . '</div>';
+
+            // Start the content section
+            echo '<div class="project-content">';
             echo '<div class="project-field">' . htmlspecialchars($project['projectField(s)']) . '</div>';
             echo '<div class="project-level">Level: ' . htmlspecialchars($project['projectLevel']) . '</div>';
             echo '<div class="project-desc">' . htmlspecialchars($project['projectDesc']) . '</div>';
-        echo '</div>';  // Close project content section
-    
-    echo '</div>'; // Close card section
-}
-?>
+            echo '</div>';  // Close project content section
 
-</body>
-</html>
+            echo '</div>'; // Close card section
+        }
+        ?>
+
+    </body>
+
+    </html>
 <?php endif; ?>
