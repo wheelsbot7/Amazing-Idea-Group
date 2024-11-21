@@ -17,7 +17,7 @@ require_once "includes/header.php";
     <div class="w3-row w3-center w3-large ">
         <p>Login Page</p>
         <p>
-        <form action="../../Amazing-Idea-Group/tempTable.php" method="post" style="text-align: left">
+        <form action="../../Amazing-Idea-Group/data_src/api/admin.php" method="post" style="text-align: left">
                 <label for="username"><b>Username: </b></label>
                 <input type="text" placeholder="Enter Username" name="username" id="username" required>
 
