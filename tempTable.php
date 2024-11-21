@@ -47,7 +47,7 @@ $stmt->close();
 if (!empty($projects)) {
     foreach ($projects as $project) {
         echo '<div class="project-card">';
-            echo '<div class="project-title">' . htmlspecialchars($project['tempName']) . '</div>';
+            echo '<div class="project-title">' . htmlspecialchars($project['tempID']) . ': ' .  htmlspecialchars($project['tempName']) . '</div>';
             echo '<div class="project-content">';
                 echo '<div class="contact-info">Email: ' . htmlspecialchars($project['userEmail']) . '</div>';
                 echo '<div class="project-field">Project Field: ' . htmlspecialchars($project['tempFields']) . '</div>';  
