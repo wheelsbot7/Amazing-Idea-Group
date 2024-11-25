@@ -23,15 +23,16 @@ if ($qry = $conn->prepare("SELECT username, password FROM users WHERE username =
         $qry->bind_result($id, $password);
         $qry->fetch();
         
-        if ($password == $row['password']) {
+        if (password_verify($_POST["password"], $password)) {
             session_regenerate_id();
             $_SESSION["loggedin"] = TRUE;
             $_SESSION["name"] = $_POST["username"];
             $_SESSION["id"] = $id;
-            
+
             header("Location: tempTable.php");
-        }
-        else {
+            exit;
+            
+        } else {
             header("Location: login.php");
         }
     } else {
