@@ -44,10 +44,26 @@ $stmt->close();
 <h1>Temporary Project List</h1>
 <div class="button-row">
     <button onclick="window.location.href='newIdea.php'" id="NewIdea">New Idea</button>
-        <button onclick="window.location.href='editIdea.php'" id="editButton">Edit Idea</button>
-        <button id="deleteButton">Delete Idea</button>
-        <button id="pushToMain">Transfer to Public</button>
-        <button onclick="window.location.href='logout.php'" id = "Logout">Logout</button>
+    <form action="editIdea.php" method="GET">
+        <!-- Options list for Ideas to edit -->
+        <br>
+        
+        <select name="tempID" id="tempProjects" class="dropdown-menu">
+            <!-- Placeholder option -->
+            <option value="" disabled selected class="placeholder">Edit Idea</option>
+
+            <!-- Loop through list and provide options -->
+            <?php foreach ($projects as $projects_edit): ?>
+                <option value="<?= htmlspecialchars($projects_edit['tempID']); ?>"><?= htmlspecialchars($projects_edit['tempName']); ?></option>
+            <?php endforeach; ?>
+        </select>
+        <br><br>
+        <input type="submit" value="Edit">
+    </form>
+        <!--<button onclick="window.location.href='editIdea.php'" id="editButton">Edit Idea</button> //replaced by dropdown-->
+    <button id="deleteButton">Delete Idea</button>
+    <button id="pushToMain">Transfer to Public</button>
+    <button onclick="window.location.href='logout.php'" id = "Logout">Logout</button>
 </div>
 
 <br>
