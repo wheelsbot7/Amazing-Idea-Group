@@ -47,6 +47,7 @@ $stmt->close();
         <button onclick="window.location.href='editIdea.php'" id="editButton">Edit Idea</button>
         <button id="deleteButton">Delete Idea</button>
         <button id="pushToMain">Transfer to Public</button>
+        <button onclick="window.location.href='logout.php'" id = "Logout">Logout</button>
 </div>
 
 <br>
