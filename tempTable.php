@@ -44,31 +44,34 @@ $stmt->close();
 <h1>Temporary Project List</h1>
 <div class="button-row">
     <button onclick="window.location.href='newIdea.php'" id="NewIdea">New Idea</button>
-    <form action="" method="POST"> <!-- Changed to POST for better practice -->
-        <!-- Options list for Ideas to edit -->
-        <br>
-        <select name="tempID" id="tempProjects" class="dropdown-menu">
-            <!-- Placeholder option -->
-            <option value="" disabled selected class="placeholder">Edit Idea</option>
+    <center>
+        <form action="" method="POST"> <!-- Changed to POST for better practice -->
+            <!-- Options list for Ideas to edit -->
+            <br>
+            <select name="tempID" id="tempProjects" class="dropdown-menu">
+                <!-- Placeholder option -->
+                <option value="" disabled selected class="placeholder">Select Idea</option>
 
-            <!-- Loop through list and provide options -->
-            <?php foreach ($projects as $projects_edit): ?>
-                <option value="<?= htmlspecialchars($projects_edit['tempID']); ?>">
-                    <?= htmlspecialchars($projects_edit['tempName']); ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-        <br><br>
-        <button type="submit" name="action" value="edit">Edit</button>
-        <button type="submit" name="action" value="delete">Delete</button>
-    </form>
+                <!-- Loop through list and provide options -->
+                <?php foreach ($projects as $projects_edit): ?>
+                    <option value="<?= htmlspecialchars($projects_edit['tempID']); ?>">
+                        <?= htmlspecialchars($projects_edit['tempName']); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <br><br>
+            <button type="submit" name="action" value="edit">Edit</button>
+            <button type="submit" name="action" value="delete">Delete</button>
+            <button type="submit" name="action" value="push">Transfer to Public</button>
+            
+        </form>
+    </center>
 
-    <button id="pushToMain">Transfer to Public</button>
     <button onclick="window.location.href='logout.php'" id = "Logout">Logout</button>
 
     <?php
         //Logic for page redirection
-        
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $action = $_POST['action']; // Determine which button was clicked
             $tempID = $_POST['tempID']; // Get the selected project ID
@@ -85,6 +88,10 @@ $stmt->close();
             } elseif ($action === 'delete') {
                 // Redirect to the delete page
                 header("Location: deleteIdea.php?tempID=" . htmlspecialchars($tempID));
+                exit;
+            } elseif ($action === 'push') {
+                // Redirect to the delete page
+                header("Location: move2public.php?tempID=" . htmlspecialchars($tempID));
                 exit;
             } else {
                 echo "Error: Invalid action.";
