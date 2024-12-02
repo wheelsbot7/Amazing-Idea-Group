@@ -12,7 +12,7 @@ include 'dbconnection.php';
 $fields = [];
 
 // SQL query
-$sql = "SELECT * FROM fields";
+$sql = "SELECT * FROM categories";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -62,7 +62,7 @@ $conn->close();
 
                 <!--  loop through every fieldSubject in the fields table and report fieldID for filtering on next page-->
                 <?php foreach ($fields as $field): ?>
-                    <option value="<?= $field['fieldID']; ?>"><?= $field['fieldSubject']; ?></option>
+                    <option value="<?= $field['catID']; ?>"><?= $field['catSubject']; ?></option>
                 <?php endforeach; ?>
 
             </select>

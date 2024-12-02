@@ -14,10 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $projects = [];
 
         //  SQL QUERY GOES HERE
-        $sql = "SELECT projectID, projectName, projectLevel, projectDesc, fieldSubject as 'projectField(s)' FROM projects p
-        LEFT JOIN proj_field pf ON p.projectID = pf.ProjID
-        LEFT JOIN fields f ON pf.fields_ID = f.fieldID
-        WHERE fieldID = $selectedMajor
+        $sql = "SELECT projectID, projectName, projectLevel, projectDesc, catSubject as 'projectField(s)' FROM Projects P
+        LEFT JOIN proj_cat pc ON P.projectID = pc.projID
+        LEFT JOIN categories c ON pc.cat_ID = c.catID
+        WHERE catID = $selectedMajor
         ";
         $result = $conn->query($sql);
 

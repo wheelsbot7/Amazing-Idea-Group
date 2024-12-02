@@ -17,7 +17,7 @@ if (isset($_GET['tempID'])) {
         $row = $result->fetch_assoc();
 
         // Insert the entry into the 'projects' table
-        $insertSQL = "INSERT INTO projects (projectName, projectDesc) VALUES (?, ?)";
+        $insertSQL = "INSERT INTO Projects (projectName, projectDesc) VALUES (?, ?)";
         $insertStmt = $conn->prepare($insertSQL);
         $insertStmt->bind_param(
             "ss", 
@@ -29,11 +29,11 @@ if (isset($_GET['tempID'])) {
         if ($insertStmt->execute()) {
 
             // Insert the project field into the 'proj_field' table
-            $insertSQL1 = "INSERT INTO proj_field (subject) VALUES (?)";
+            $insertSQL1 = "INSERT INTO proj_cat (subject) VALUES (?)";
             $insertStmt1 = $conn->prepare($insertSQL1);
             $insertStmt1->bind_param(
                 "s", 
-                $row['subject'] // Ensure the correct field 'subject' is used for the proj_field table
+                $row['subject'] // Ensure the correct field 'subject' is used for the proj_cat table
             );
 
             // Execute the insert statement for proj_field table
@@ -51,10 +51,10 @@ if (isset($_GET['tempID'])) {
                     echo "Error deleting record: " . $deleteStmt->error;
                 }
             } else {
-                echo "Error inserting into proj_field: " . $insertStmt1->error;
+                echo "Error inserting into proj_cat: " . $insertStmt1->error;
             }
         } else {
-            echo "Error inserting into projects: " . $insertStmt->error;
+            echo "Error inserting into Projects: " . $insertStmt->error;
         }
     } else {
         echo "No record found for tempID: " . htmlspecialchars($tempID);
