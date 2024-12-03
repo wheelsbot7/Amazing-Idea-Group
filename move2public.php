@@ -16,27 +16,44 @@ if (isset($_GET['tempID'])) {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
 
-        // Insert the entry into the 'projects' table
+        // Insert the entry into the 'Projects' table
         $insertSQL = "INSERT INTO Projects (projectName, projectDesc) VALUES (?, ?)";
         $insertStmt = $conn->prepare($insertSQL);
-        $insertStmt->bind_param(
-            "ss", 
-            $row['projectName'], 
-            $row['projectDesc']
-        );
+        $insertStmt->bind_param("ss", $row['projectName'], $row['projectDesc']);
 
-        // Insert the entry into the 'projects' table
         if ($insertStmt->execute()) {
+            // Determine projID and catID based on 'subject'
+            if ($row['subject'] === 'Computer Science') {
+                $projID = 4;
+                $catID = 1; // Example category ID for Computer Science
+            } elseif ($row['subject'] === 'Computer Engineering') {
+                $projID = 3;
+                $catID = 2; // Example category ID for Computer Engineering
+            } else {
+                $projID = 1;
+                $catID = 3; // Default category ID
+            }
 
-            // Insert the project field into the 'proj_field' table
-            $insertSQL1 = "INSERT INTO proj_cat (subject) VALUES (?)";
+            // Verify catID exists in the categories table
+            $checkSQL = "SELECT catID FROM categories WHERE catID = ?";
+            $checkStmt = $conn->prepare($checkSQL);
+            $checkStmt->bind_param("i", $catID);
+            $checkStmt->execute();
+            $checkResult = $checkStmt->get_result();
+
+            if ($checkResult->num_rows === 0) {
+                die("Error: cat_ID $catID does not exist in the categories table.");
+            }
+
+            // Insert into 'proj_cat' table
+            $insertSQL1 = "INSERT INTO proj_cat (projID, cat_ID) VALUES (?, ?)";
             $insertStmt1 = $conn->prepare($insertSQL1);
-            $insertStmt1->bind_param(
-                "s", 
-                $row['subject'] // Ensure the correct field 'subject' is used for the proj_cat table
-            );
+            if (!$insertStmt1) {
+                die("Prepare failed: " . $conn->error);
+            }
 
-            // Execute the insert statement for proj_field table
+            $insertStmt1->bind_param("ii", $projID, $catID);
+
             if ($insertStmt1->execute()) {
                 // Delete the entry from the original 'pending' table
                 $deleteSQL = "DELETE FROM pending WHERE tempID = ?";
