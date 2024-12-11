@@ -1,23 +1,39 @@
 <?php
 
 
-$name = "Sample name";
-$message = "Sample message";
-$email = "Sample email";
+// $name = "Sample name";
+// $message = "Sample message";
+// $email = "Sample email";
 
-$subject = "sample subject";
-$comment = "sample comment";
-$date = "9/9/9";
+// $subject = "sample subject";
+// $comment = "sample comment";
+// $date = "9/9/9";
 
+$name = $_POST['Name'];
+$email = $_POST['Email'];
+$subject = $_POST['Subject'];
+$comment = $_POST['Comment'];
+
+
+$message = "We have received a new idea to the AIG database from {$name}! Please check it out!\n\n<BR>".$subject."\n\n<BR>".$comment;
+
+
+
+
+$date = date("y-m-d");
+
+// Email Headers
 $headers  = "From: The Amazing Ideas Group <ideas@etowndb.com>\n";
-    $headers .= "Cc: parker <englep@etown.edu>\n"; 
-    $headers .= "X-Sender: parker <englep@etown.edu>\n";
+    $headers .= "Cc: example <englep@etown.edu>\n"; 
+    $headers .= "X-Sender: example <englep@etown.edu>\n";
     $headers .= 'X-Mailer: PHP/' . phpversion();
     $headers .= "X-Priority: 1\n"; // Urgent message!
     $headers .= "Return-Path: ideas@etowndb.com\n"; // Return path for errors
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=iso-8859-1\n";
-$to = "pme0420@gmail.com";                                                                                              
+
+    // insert target email here
+$to = "example@gmail.com";                                                                                              
 
 
 if(mail($to, 'New message from your website', $message, $headers)){
